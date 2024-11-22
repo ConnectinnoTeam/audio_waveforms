@@ -141,7 +141,11 @@ class RecorderController extends ChangeNotifier {
   ///
   /// Use [useLegacyNormalization] parameter to use normalization before
   /// 1.0.0 release.
-  RecorderController({bool useLegacyNormalization = false}) {
+  /// [updateFrequency] is used to update waveform at defined frequency.
+  /// Default is 100 milliseconds.
+  RecorderController(
+      {bool useLegacyNormalization = false,
+      this.updateFrequency = const Duration(milliseconds: 100)}) {
     _useLegacyNormalization = useLegacyNormalization;
   }
 
